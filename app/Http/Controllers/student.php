@@ -42,16 +42,13 @@ class student extends Controller
         $hws = Attend::where('std_id',Auth::user()->id)->select('attendence.date','attendence.hw')->join('branches','branches.id','=','attendence.branch_id')->selectRaw('branches.name')->get();
         return view('hw')->with('hws',$hws);
     }
-    public function PDF_export()
-    {
-        $data = [
-            'id'=>Auth()->user()->id
-        ];
-        $pdf = PDF->loadView('Pdfbar', $data);
-        return $pdf->download('Barcode.pdf');
-    }
     public function profile()
     {
-        return view('profile');
+        $lectures = Attend::where('std_id',Auth()->user()->id)->count();
+        $lectures_attend = Attend::where('std_id',Auth()->user()->id)->where('attendence','1')->count();
+        $exams = Exam::where('std_id',Auth()->user()->id)->count();
+        $homework = Attend::where('std_id',Auth()->user()->id)->where('hw','1')->count();
+        return view('profile')->with('lectures',$lectures)->with('lectures_attend',$lectures_attend)
+        ->with('exams',$exams)->with('homework',$homework);
     }
 }

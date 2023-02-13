@@ -30,9 +30,8 @@ Route::controller(student::class)->group(function(){
     Route::get('exm','exm')->name('exm');
     Route::get('exc','exc')->name('exc');
     Route::get('hw','hw')->name('hw');
-    Route::get('PDF','PDF_export')->name('pdf');
     Route::get('profile','profile')->name('profile');
 });
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');

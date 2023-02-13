@@ -7,24 +7,21 @@
 <body>
     <h1>{{ $title }}</h1>
     <p>{{ $date }}</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>This is your data information.</p>
 
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
             <th>Barcode</th>
-            <th>Email</th>
+            <th>username</th>
         </tr>
-        @foreach($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>
                     {!! DNS1D::getBarcodeHTML(''.$user['id'].'', 'C128') !!}
                 </td>
-                <td>{{ $user->email }}</td>
+                <td>{{ $user->username }}</td>
             </tr>
-        @endforeach
     </table>
 </body>
 </html>

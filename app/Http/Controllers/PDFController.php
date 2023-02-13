@@ -2,9 +2,14 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 class PDFController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -12,16 +17,16 @@ class PDFController extends Controller
     */
     public function generatePDF()
     {
-        $users = User::get();
+        $user = User::find(Auth()->user()->id);
 
         $data = [
-            'title' => 'Welcome to LaravelTuts.com',
+            'title' => 'Welcome to essammossad.com',
             'date' => date('m/d/Y'),
-            'users' => $users
+            'user' => $user
         ];
 
         $pdf = PDF::loadView('Pdfbar', $data);
 
-        return $pdf->download('laraveltuts.pdf');
+        return $pdf->download('Barcode.pdf');
     }
 }
