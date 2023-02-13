@@ -44,6 +44,7 @@ class student extends Controller
     }
     public function profile()
     {
+        session()->forget('active');
         $lectures = Attend::where('std_id',Auth()->user()->id)->count();
         $lectures_attend = Attend::where('std_id',Auth()->user()->id)->where('attendence','1')->count();
         $exams = Exam::where('std_id',Auth()->user()->id)->count();
