@@ -35,4 +35,4 @@ Route::controller(student::class)->group(function(){
 });
 Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('pdf');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
