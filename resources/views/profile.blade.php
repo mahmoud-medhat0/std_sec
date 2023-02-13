@@ -5,9 +5,6 @@
 @section('title')
 الحساب الشخصي
 @endsection
-@section('hidden-title')
-<h1 class="hidden-title">@yield('title')</h1>
-@endsection
 @section('content')
 <div class="card">
     <img src="{{ asset(session()->get('image')) }}">
