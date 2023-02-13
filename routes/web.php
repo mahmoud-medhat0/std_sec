@@ -1,0 +1,38 @@
+<?php
+
+use App\Http\Controllers\student;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
+Route::controller(student::class)->group(function(){
+    Route::get('att','attend')->name('attend');
+    Route::get('exm','exm')->name('exm');
+    Route::get('exc','exc')->name('exc');
+    Route::get('hw','hw')->name('hw');
+    Route::get('PDF','PDF_export')->name('pdf');
+    Route::get('profile','profile')->name('profile');
+});
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
