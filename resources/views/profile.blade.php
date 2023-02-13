@@ -7,11 +7,14 @@
 @endsection
 @section('content')
 <div class="card">
-    <img src="@if (Auth::user()->gender =='m')
-    {{ asset('images/UserBoy.png') }}
-    @else
-    {{ asset('images/GirlUser.png') }}
-    @endif">
+    @switch(Auth::user()->gender)
+    @case('m')
+    {{ '<img src="'.asset('images/UserBoy.png').'" alt="" srcset="">'    }}
+    @break
+    @case('f')
+    {{ '<img src="'.asset('images/GirlUser.png').'" alt="" srcset="">'    }}
+    @break
+    @endswitch
     <h1>{{ Auth()->user()->name }}</h1>
     <div class="info">
         <div>
