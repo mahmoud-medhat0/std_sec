@@ -1,14 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Scheherazade New', serif;
 }
 
-.bg{
+.bg {
     background-color: #302D2D;
     height: 100vh;
     display: flex;
@@ -20,11 +20,26 @@ body{
     width: 100%;
 }
 
-.main-img{
+.hidden-title {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    display: none;
+    font-size: 20px;
+    border-radius: 40px;
+    background: rgb(92, 78, 50);
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+}
+
+.main-img {
     margin: 30px 0;
 }
 
-.nav{
+.nav {
     position: absolute;
     top: 12px;
     left: 50%;
@@ -32,7 +47,7 @@ body{
     width: 98%;
     height: 120px;
     border-radius: 70px;
-    background: rgb(92,78,50);
+    background: rgb(92, 78, 50);
     background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
     display: flex;
     justify-content: space-between;
@@ -40,7 +55,7 @@ body{
     padding: 0 50px;
 }
 
-.nav a{
+.nav a {
     color: white;
     text-decoration: none;
     font-size: 50px;
@@ -48,23 +63,23 @@ body{
     width: 335px;
 }
 
-.nav .logo{
+.nav .logo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.nav .logo img{
+.nav .logo img {
     width: 70px;
     margin-left: 20px;
 }
 
-.nav .logo h1{
+.nav .logo h1 {
     color: white;
     font-size: 40px;
 }
 
-.flex{
+.flex {
     position: absolute;
     left: 0;
     top: 0;
@@ -77,12 +92,12 @@ body{
     z-index: -4;
 }
 
-.flex .card{
+.flex .card {
     position: relative;
     width: 50%;
     height: 75%;
     z-index: 645;
-    background: linear-gradient(45deg , rgba(78, 68, 47, 0.849) 0%, rgb(165, 117, 21) 100%);
+    background: linear-gradient(45deg, rgba(78, 68, 47, 0.849) 0%, rgb(165, 117, 21) 100%);
     padding: 20px;
     display: flex;
     align-items: center;
@@ -92,18 +107,18 @@ body{
     margin-top: 80px;
 }
 
-.flex .card img{
+.flex .card img {
     width: 90px;
     margin: 10px 0 0;
 }
 
-.flex .card > h1{
+.flex .card>h1 {
     font-size: 40px;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-.flex .card .info{
+.flex .card .info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,20 +131,20 @@ body{
     background-color: rgba(0, 0, 0, 0.685);
 }
 
-.flex .card .info div{
+.flex .card .info div {
     text-align: center;
     line-height: 1.3;
     width: calc(100% / 3);
     height: calc(100% / 3);
 }
 
-.info div h1{
+.info div h1 {
     font-size: 20px;
     position: relative;
 }
 
 .flex .card .info div:last-child,
-.flex .card .info div:nth-child(5){
+.flex .card .info div:nth-child(5) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -138,13 +153,12 @@ body{
 }
 
 .flex .card .info div:last-child h2,
-.flex .card .info div:nth-child(5) h2{
+.flex .card .info div:nth-child(5) h2 {
     font-size: 17px;
 }
 
 .info div h1:last-child::before,
-.info div h1:nth-child(5)::before
-{
+.info div h1:nth-child(5)::before {
     content: '';
     right: -38px;
     top: 50%;
@@ -155,7 +169,8 @@ body{
     background-color: white;
 }
 
-/* 
+
+/*
 .flex .card::before{
     content: '';
     position: absolute;
@@ -167,57 +182,50 @@ body{
     z-index: -1;
 } */
 
-.info-2{
+.info-2 {
     width: 80%;
     direction: rtl;
     margin: 20px 0 0;
 }
 
-.info-2 div h1{
+.info-2 div h1 {
     display: inline;
 }
 
-.info-2 div h3{
+.info-2 div h3 {
     display: inline;
 }
 
 @media (max-width: 1190px) {
-    .nav a{
+    .nav a {
         font-size: 40px;
     }
-    
-    .nav .logo img{
+    .nav .logo img {
         width: 60px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 40px;
     }
-
-    .flex .card{
+    .flex .card {
         width: 70%;
     }
 }
 
 @media (max-width: 950px) {
-    .nav{
+    .nav {
         height: 100px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 60px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 30px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 30px;
         width: 251px;
     }
-
-    .flex .card{
+    .flex .card {
         width: 80%;
     }
 }
@@ -226,257 +234,250 @@ body{
     .nav .bar-code {
         font-size: 25px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 50px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 30px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 30px;
         width: 217px;
     }
 }
 
 @media (max-width: 720px) {
-    .nav{
+    .nav {
         padding: 0 25px;
     }
-
     .nav .bar-code {
         font-size: 20px;
         border-radius: 15px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 50px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 25px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 25px;
         width: 217px;
     }
-
-    .flex .card{
+    .flex .card {
         width: 85%;
     }
 }
 
 @media (max-width: 680px) {
-    .info div h1{
+    .info div h1 {
         font-size: 14px;
     }
-
-    .flex .card .info{
+    .flex .card .info {
         height: 30%;
     }
-
-    .info-2 h1{
+    .info-2 h1 {
         font-size: 19px;
     }
-
-    .info-2 h3{
+    .info-2 h3 {
         font-size: 15px;
     }
 }
 
 @media (max-width: 650px) {
-    .nav{
+    .nav {
         height: 80px;
         width: 96%;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 40px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 20px;
         margin-top: 0;
     }
-
-    .nav a{
+    .nav a {
         font-size: 20px;
         width: 158px;
     }
 }
 
 @media (max-width: 565px) {
-    .nav .logo img{
+    .nav .logo img {
         width: 40px;
     }
 }
 
 @media (max-width: 490px) {
-    .nav{
+    .nav {
         height: 80px;
         width: 96%;
         padding: 0 12px;
     }
-
-    .nav .logo{
+    .nav .logo {
         width: 140px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 40px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 18px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 20px;
         margin-top: 0;
         width: 100px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 40px;
         margin-left: 10px;
     }
 }
 
 @media (max-width: 430px) {
-    .nav .logo img{
+    .nav .logo img {
         width: 30px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 16px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 16px;
         margin-top: 0;
         width: 90px;
     }
-
     .flex .card .info div:last-child,
-    .flex .card .info div:nth-child(5){
-    gap: 10px;
+    .flex .card .info div:nth-child(5) {
+        gap: 10px;
     }
-
     .info div h1:last-child::before,
-    .info div h1:nth-child(5)::before{
+    .info div h1:nth-child(5)::before {
         right: -24px;
         width: 15px;
     }
-
-    .flex .card .info{
+    .flex .card .info {
         height: 20%;
     }
-
     .flex .card .info div:last-child h2,
-    .flex .card .info div:nth-child(5) h2{
+    .flex .card .info div:nth-child(5) h2 {
         font-size: 14px;
     }
-    
-    .info div h1{
+    .info div h1 {
         font-size: 12px;
     }
-
-    .info div span h2{
+    .info div span h2 {
         font-size: 12px;
     }
-
-    .info div h3{
+    .info div h3 {
         font-size: 12px;
     }
-
     .info-2 {
         width: 100%;
     }
 }
 
 @media (max-width: 390px) {
-    .nav{
+    .nav {
         padding: 0 10px;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 20px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 16px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 14px;
         margin-top: 0;
         width: 70px;
     }
+    .hidden-title {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 390px) {
-
-    .nav{
+    .nav {
         height: 80px;
         width: 96%;
     }
-
-    .nav .logo img{
+    .nav .logo img {
         width: 30px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 16px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 16px;
         margin-top: 0;
     }
 }
 
 @media (max-width: 360px) {
-    .nav .logo img{
+    .nav .logo img {
         width: 30px;
     }
-
-    .nav .logo h1{
+    .nav .logo h1 {
         font-size: 18px;
     }
-
-    .nav a{
+    .nav a {
         font-size: 17px;
         margin-top: 0;
     }
 }
 
 @media (max-width: 1020px) {
-    .bg img:nth-child(2){
+    .bg img:nth-child(2) {
         width: 65%;
     }
 }
 
 @media (max-width: 770px) {
-    .bg img{
+    .bg img {
         width: 50%;
     }
-
-    .bg img:nth-child(2){
+    .bg img:nth-child(2) {
         width: 80%;
     }
 }
 
 @media (max-width: 550px) {
-    .bg img{
+    .bg img {
         width: 50%;
     }
 }
 
 @media (max-width: 414px) {
-    .bg img{
+    .bg img {
         width: 60%;
+    }
+    @media (max-width: 740px) {
+        .titles {
+            font-size: 35px;
+        }
+        .inputs tr td {
+            font-size: 28px;
+        }
+        .hidden-title {
+            display: block;
+        }
+        .nav>h1 {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .titles {
+        font-size: 35px;
+    }
+    .inputs tr td {
+        font-size: 28px;
+    }
+    .hidden-title {
+        display: block;
+    }
+    .nav>h1 {
+        display: none;
     }
 }
