@@ -2,12 +2,6 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
 @endsection
-@section('title')
-الصفحه الرئيسيه
-@endsection
-@section('hidden-title')
-''
-@endsection
 @section('center')
 <center><a class="bar-code" href="{{ route('pdf') }}">بار كود</a></center>
 @endsection
