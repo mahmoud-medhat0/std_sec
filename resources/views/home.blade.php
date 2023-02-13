@@ -5,6 +5,9 @@
 @section('title')
 الصفحه الرئيسيه
 @endsection
+@section('hidden-title')
+@yield('title')
+@endsection
 @section('center')
 <center><a class="bar-code" href="{{ route('pdf') }}">بار كود</a></center>
 @endsection
