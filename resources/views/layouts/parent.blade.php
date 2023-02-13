@@ -35,13 +35,7 @@
         <h1>@yield('center')</h1>
         <a href="{{ route('profile') }}" class="logo">
             <h1>{{ Auth::user()->name }}</h1>
-            <img src="
-            @if (Auth::user()->gender =='m')
-            {{ asset('images/UserBoy.png') }}
-            @else
-            {{ asset('images/GirlUser.png') }}
-            @endif
-            ">
+            <img src="{{ asset(session()->get('image')) }}">
         </a>
     </div>
     @yield('hidden-title')

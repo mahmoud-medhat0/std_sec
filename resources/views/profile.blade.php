@@ -5,16 +5,12 @@
 @section('title')
 الحساب الشخصي
 @endsection
+@section('hidden-title')
+<h1 class="hidden-title">@yield('title')</h1>
+@endsection
 @section('content')
 <div class="card">
-    @switch(Auth::user()->gender)
-    @case('m')
-    {{ '<img src="'.asset('images/UserBoy.png').'" alt="" srcset="">'    }}
-    @break
-    @case('f')
-    {{ '<img src="'.asset('images/GirlUser.png').'" alt="" srcset="">'    }}
-    @break
-    @endswitch
+    <img src="{{ asset(session()->get('image')) }}">
     <h1>{{ Auth()->user()->name }}</h1>
     <div class="info">
         <div>
