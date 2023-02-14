@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="icon" href="{{ asset('/images/logo1.png') }}">
     <title>عصام</title>
 </head>
+
 <body>
     <div class="bg">
         <img class="main-img" src="{{ asset('/images/logo1.png')}}" width="35%">
@@ -22,21 +24,26 @@
             <form class="inputs" method="POST" action="{{ route('login') }}">
                 @csrf
                 <input class="@error('username') is-invalid @enderror" name="username" placeholder="Enter Your Email">
-                                                @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                @error('username')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
 
                 <input type="password" name="password" placeholder="Enter Your Password">
-                                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <button type="submit" id="submit">{{ __('login') }}</button>
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <div class="remember">
+                    <input type="checkbox" name="remember">
+                    <label>Remember me</label>
+                </div>
+                <button type="submit" id="submit">{{ __('login') }}</button>
             </form>
         </div>
     </section>
 </body>
+
 </html>
