@@ -15,7 +15,7 @@ class student extends Controller
     public function __construct()
     {
         session()->forget('active');
-        $this->middleware('auth');
+        $this->middleware(['auth','VerifiedUser']);
     }
 
     public function attend()

@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Scheherazade New', serif;
+    overflow: hidden;
 }
 
 .bg {
@@ -20,317 +21,327 @@ body {
     width: 100%;
 }
 
-.hidden-title {
-    text-align: center;
-    color: white;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 25%;
-    display: none;
-    font-size: 20px;
-    border-radius: 40px;
-    background: rgb(92, 78, 50);
-    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
-}
-
 .main-img {
     margin: 30px 0;
 }
 
-.nav {
+.back {
     position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 98%;
-    height: 120px;
-    border-radius: 70px;
-    background: rgb(92, 78, 50);
+    top: 10px;
+    left: 10px;
     background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+    text-align: center;
+    padding: 0 35px;
+    font-size: 35px;
+    border-radius: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 50px;
 }
 
-.nav a {
-    color: white;
+.back a {
     text-decoration: none;
-    font-size: 50px;
-    margin-top: -10px;
-    width: 335px;
-}
-
-.nav .logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.nav .logo img {
-    width: 70px;
-    margin-left: 20px;
-}
-
-.nav .logo h1 {
     color: white;
-    font-size: 40px;
 }
 
 .flex {
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    z-index: -1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: -4;
+    padding-top: 60px;
 }
 
-.flex .card {
-    position: relative;
-    width: 50%;
-    height: 75%;
-    z-index: 645;
-    background: linear-gradient(45deg, rgba(78, 68, 47, 0.849) 0%, rgb(165, 117, 21) 100%);
-    padding: 20px;
+.flex .container {
+    height: 80%;
+    width: 85%;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.flex .container img {
+    width: 120px;
+}
+
+.flex .container h1 {
     color: white;
-    border-radius: 20px;
-    margin-top: 80px;
-}
-
-.flex .card img {
-    width: 90px;
-    margin: 10px 0 0;
-}
-
-.flex .card>h1 {
-    font-size: 40px;
+    padding: 5px 140px;
+    border-radius: 40px;
     margin-bottom: 10px;
-    font-weight: 700;
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
 }
 
-.flex .card .info {
+.flex .container .info {
+    width: 90%;
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+    border-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    direction: rtl;
+    padding: 20px;
+}
+
+.flex .container .info span {
+    width: calc(100% / 3 - 20px);
+    text-align: center;
+    padding: 35px 0;
+    margin: 0px 10px;
+    color: white;
+    font-size: 18px;
+}
+
+.flex .container .info span h2 {
+    display: inline;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.flex .container .info span h3 {
+    display: inline;
+    font-size: 30px;
+}
+
+.flex .container .info div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 160px;
+}
+
+.flex .container .info div .percentage {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 40%;
-    padding: 5px 0;
-    border-radius: 10px;
-    direction: rtl;
-    background-color: rgba(0, 0, 0, 0.685);
+    width: calc(100% / 2);
+    padding: 0;
+    margin-right: -40px;
 }
 
-.flex .card .info div {
-    text-align: center;
-    line-height: 1.3;
-    width: calc(100% / 3);
-    height: calc(100% / 3);
-}
-
-.info div h1 {
-    font-size: 20px;
+.flex .container .info div .percentage span {
+    line-height: 1.5;
     position: relative;
 }
 
-.flex .card .info div:last-child,
-.flex .card .info div:nth-child(5) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.flex .card .info div:last-child h2,
-.flex .card .info div:nth-child(5) h2 {
-    font-size: 17px;
-}
-
-.info div h1:last-child::before,
-.info div h1:nth-child(5)::before {
-    content: '';
-    right: -38px;
-    top: 50%;
-    transform: translateY(-50%);
+.flex .container .info div .percentage span::before {
     position: absolute;
-    width: 20px;
+    content: '';
+    width: 30px;
     height: 3px;
-    background-color: white;
+    background: #b47420;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.flex .container .info div .percentage h4 {
+    font-size: 25px;
+}
 
-/*
-.flex .card::before{
-    content: '';
+.flex .container .info div .percentage h5 {
+    font-size: 25px;
+}
+
+.flex .container .info div .percentage h2 {
+    font-size: 30px;
+}
+
+.parent-number {
     position: absolute;
-    width: 100%;
-    height: 75%;
-    background-color: red;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-} */
-
-.info-2 {
-    width: 80%;
-    direction: rtl;
-    margin: 20px 0 0;
+    width: 304px;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+    text-align: center;
+    padding: 5px 50px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
 }
 
-.info-2 div h1 {
-    display: inline;
+.personal-number {
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    bottom: 10px;
+    width: 304px;
+    padding: 5px 50px;
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+    color: white;
+    border-radius: 40px;
 }
 
-.info-2 div h3 {
-    display: inline;
-}
-
-@media (max-width: 1190px) {
-    .nav a {
-        font-size: 40px;
-    }
-    .nav .logo img {
-        width: 60px;
-    }
-    .nav .logo h1 {
-        font-size: 40px;
-    }
-    .flex .card {
-        width: 70%;
+@media (max-width: 1535px) {
+    .flex .container .info div {
+        padding: 0 50px;
     }
 }
 
-@media (max-width: 950px) {
-    .nav {
-        height: 100px;
-    }
-    .nav .logo img {
-        width: 60px;
-    }
-    .nav .logo h1 {
-        font-size: 30px;
-    }
-    .nav a {
-        font-size: 30px;
-        width: 251px;
-    }
-    .flex .card {
-        width: 80%;
-    }
-}
-
-@media (max-width: 830px) {
-    .nav .bar-code {
+@media (max-width: 1250px) {
+    .flex .container .info div .percentage h2 {
         font-size: 25px;
     }
-    .nav .logo img {
-        width: 50px;
-    }
-    .nav .logo h1 {
-        font-size: 30px;
-    }
-    .nav a {
-        font-size: 30px;
-        width: 217px;
-    }
-}
-
-@media (max-width: 720px) {
-    .nav {
-        padding: 0 25px;
-    }
-    .nav .bar-code {
+    .flex .container .info div .percentage h4 {
         font-size: 20px;
-        border-radius: 15px;
     }
-    .nav .logo img {
-        width: 50px;
-    }
-    .nav .logo h1 {
-        font-size: 25px;
-    }
-    .nav a {
-        font-size: 25px;
-        width: 217px;
-    }
-    .flex .card {
-        width: 85%;
-    }
-}
-
-@media (max-width: 680px) {
-    .info div h1 {
-        font-size: 14px;
-    }
-    .flex .card .info {
-        height: 30%;
-    }
-    .info-2 h1 {
-        font-size: 19px;
-    }
-    .info-2 h3 {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 650px) {
-    .nav {
-        height: 80px;
-        width: 96%;
-    }
-    .nav .logo img {
-        width: 40px;
-    }
-    .nav .logo h1 {
+    .flex .container .info div .percentage h5 {
         font-size: 20px;
-        margin-top: 0;
     }
-    .nav a {
+    .flex .container .info {
+        width: 100%;
+    }
+}
+
+@media (max-height: 1000px) {
+    .bg {
+        height: 100%;
+    }
+}
+
+@media (max-width: 975px) {
+    .flex .container .info {
+        width: 110%;
+    }
+    .flex .container .info span h2 {
+        margin-left: 20px;
         font-size: 20px;
-        width: 158px;
+    }
+    .flex .container .info span h3 {
+        display: inline;
+        font-size: 22px;
+    }
+    .flex .container .info div .percentage h4 {
+        font-size: 20px;
+    }
+    .flex .container .info div .percentage h5 {
+        font-size: 20px;
+    }
+    .flex .container .info div .percentage h2 {
+        font-size: 20px;
+        white-space: nowrap;
     }
 }
 
-@media (max-width: 565px) {
-    .nav .logo img {
-        width: 40px;
+@media (max-width: 630px) {
+    .flex .container .info {
+        width: 110%;
+        padding: 10px;
     }
-}
-
-@media (max-width: 490px) {
-    .nav {
-        height: 80px;
-        width: 96%;
-        padding: 0 12px;
+    .flex .container h1 {
+        padding: 0 90px;
     }
-    .nav .logo {
-        width: 140px;
+    .flex .container img {
+        width: 80px;
     }
-    .nav .logo img {
-        width: 40px;
+    .flex .container .info span h2 {
+        margin-left: 10px;
+        font-size: 17px;
     }
-    .nav .logo h1 {
+    .flex .container .info span h3 {
+        display: inline;
         font-size: 18px;
     }
-    .nav a {
-        font-size: 20px;
-        margin-top: 0;
-        width: 100px;
+    .flex .container .info div .percentage h4 {
+        font-size: 18px;
     }
-    .nav .logo img {
-        width: 40px;
+    .flex .container .info div {
+        padding: 0 0px;
+    }
+    .flex .container .info div .percentage h5 {
+        font-size: 18px;
+    }
+    .flex .container .info div .percentage h2 {
+        font-size: 17px;
+        white-space: nowrap;
+    }
+    .personal-number {
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    .parent-number {
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 72px;
+    }
+}
+
+@media (max-width: 575px) {
+    .flex .container h1 {
+        padding: 0 90px;
+        font-size: 20px;
+    }
+    .back {
+        font-size: 25px;
+    }
+    .back a {
+        font: 25px;
+    }
+}
+
+@media (max-width: 510px) {
+    .flex .container .info {
+        width: 110%;
+        padding: 0;
+    }
+    .flex .container h1 {
+        padding: 0 90px;
+    }
+    .flex .container img {
+        width: 80px;
+    }
+    .flex .container .info span h2 {
         margin-left: 10px;
+        font-size: 17px;
+        display: block;
+    }
+    .flex .container .info span h3 {
+        display: inline;
+        font-size: 18px;
+    }
+    .flex .container .info div .percentage h4 {
+        font-size: 18px;
+    }
+    .flex .container .info div {
+        padding: 0 0px;
+    }
+    .flex .container .info div .percentage h5 {
+        font-size: 18px;
+    }
+    .flex .container .info div .percentage h2 {
+        font-size: 17px;
+        white-space: nowrap;
+        margin: 0;
+    }
+    .flex .container .info span {
+        margin: 0;
+        width: calc(100% / 3);
+    }
+    .flex .container .info div {
+        justify-content: space-around;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .flex .container .info div .percentage h2 {
+        font-size: 15px;
+        white-space: pre-wrap;
+        margin: 0;
+    }
+    .flex .container h1 {
+        padding: 0 40px;
+    }
+    .flex .container img {
+        width: 60px;
+    }
+    .container {
+        margin-top: 50px;
     }
 }
 
@@ -391,9 +402,6 @@ body {
         margin-top: 0;
         width: 70px;
     }
-    .hidden-title {
-        font-size: 10px;
-    }
 }
 
 @media (max-width: 390px) {
@@ -450,34 +458,5 @@ body {
 @media (max-width: 414px) {
     .bg img {
         width: 60%;
-    }
-    @media (max-width: 740px) {
-        .titles {
-            font-size: 35px;
-        }
-        .inputs tr td {
-            font-size: 28px;
-        }
-        .hidden-title {
-            display: block;
-        }
-        .nav>h1 {
-            display: none;
-        }
-    }
-}
-
-@media (max-width: 740px) {
-    .titles {
-        font-size: 35px;
-    }
-    .inputs tr td {
-        font-size: 28px;
-    }
-    .hidden-title {
-        display: block;
-    }
-    .nav>h1 {
-        display: none;
     }
 }

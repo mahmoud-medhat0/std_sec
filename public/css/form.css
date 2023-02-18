@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Scheherazade New', serif;
+}
+
+.bg{
+    background-color: #302D2D;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+.main-img{
+    margin: 30px 0;
+}
+
+.flex{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continer{
+    direction: rtl;
+    background: linear-gradient(90deg, rgba(83, 71, 43, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.continer div{
+    height: calc(100% / 9 - 7px);
+    margin: 7px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.continer div label{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.continer div input,
+.select
+{
+    width: 85%;
+    height: 70%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 15px;
+    padding: 0 25px;
+    outline: none;
+    color: white;
+    font-size: 22px;
+    position: relative;
+}
+
+.select{
+    text-align: center;
+    appearance: none;
+    position: relative;
+}
+
+.select option{
+    background-color: #B98537;
+    padding: 10px;
+}
+
+.submit{
+    background: linear-gradient(90deg, rgba(75, 65, 44, 0.853) 0%, rgba(165, 117, 21, 0.867) 100%);
+    border: none;
+    position: absolute;
+    border-radius: 15px;
+    width: 10%;
+    padding: 10px 0;
+    font-size: 30px;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 1470px) {
+    .continer div label{
+        font-size: 25px;
+    }
+
+    .continer div input,
+    .select{
+        height: 65%;
+    }
+}
+
+@media (max-width: 1233px) {
+    .continer div label{
+        font-size: 20px;
+    }
+
+    .continer div input,
+    .select{
+        height: 65%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 760px) {
+    .continer{
+        padding: 0 10px;
+    }
+
+    .continer div label{
+        font-size: 18px;
+    }
+
+    .continer div input,
+    .select{
+        height: 55%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 665px) {
+    .continer div input,
+    .select{
+        height: 55%;
+        width: 75%;
+    }
+}
+
+@media (max-width: 665px) {
+    .continer{
+        padding: 0 10px;
+        width: 90%;
+    }
+
+    .continer div label{
+        font-size: 17px;
+    }
+
+    .continer div input,
+    .select{
+        height: 50%;
+        width: 70%;
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 665px) {
+    .continer{
+        padding: 0 10px;
+        width: 90%;
+    }
+
+    .continer div label{
+        font-size: 16px;
+    }
+
+    .continer div input,
+    .select{
+        height: 50%;
+        width: 70%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .bg img:nth-child(2){
+        width: 65%;
+    }
+}
+
+@media (max-width: 770px) {
+    .bg img{
+        width: 50%;
+    }
+
+    .bg img:nth-child(2){
+        width: 80%;
+    }
+
+    .submit{
+        width: 25%;
+    }
+}
+
+@media (max-width: 550px) {
+    .bg img{
+        width: 50%;
+    }
+}
+
+@media (max-width: 414px) {
+    .bg img{
+        width: 60%;
+    }
+}
+
+@media (max-height: 936px) {
+    .bg img:first-child{
+        width: 30%;
+    }
+
+    .bg img:last-child{
+        width: 50%;
+    }
+}
+
+@media (max-height: 840px) {
+    .bg img:first-child{
+        width: 25%;
+    }
+
+    .bg img:last-child{
+        width: 40%;
+    }
+}
